@@ -7,7 +7,7 @@
   position: relative;
 }
 
-._fc-designer > .el-main {
+._fc-designer > .arco-layout-content {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -81,7 +81,7 @@
   border-top: 0 none;
 }
 
-._fc-m-tools button.el-button {
+._fc-m-tools button.arco-btn {
   padding: 5px 14px;
   display: flex;
   align-items: center;
@@ -141,16 +141,16 @@
 }
 
 ._fc-m-drag > form,
-._fc-m-drag > form > .el-row {
+._fc-m-drag > form > .a-row {
   height: 100%;
 }
 </style>
 
 <template>
-  <ElContainer class="_fc-designer" :style="'height:' + dragHeight">
-    <ElMain>
-      <ElContainer style="height: 100%">
-        <el-aside class="_fc-l" width="266px">
+  <a-layout class="_fc-designer" :style="'height:' + dragHeight">
+    <a-layout-content>
+      <a-layout style="height: 100%">
+        <a-layout-sider class="_fc-l" width="266px">
           <template v-for="(item, index) in menuList" :key="index">
             <div class="_fc-l-group">
               <h4 class="_fc-l-title">{{ item.title }}</h4>
@@ -174,46 +174,46 @@
               </draggable>
             </div>
           </template>
-        </el-aside>
-        <ElContainer class="_fc-m">
-          <el-header class="_fc-m-tools" height="45">
+        </a-layout-sider>
+        <a-layout class="_fc-m">
+          <a-layout-header class="_fc-m-tools" height="45">
             <slot name="handle"></slot>
-            <el-button
+            <a-button
               type="primary"
               plain
               round
               size="small"
               @click="previewFc"
               ><i class="fc-icon icon-preview"></i> {{ t("designer.preview") }}
-            </el-button>
-            <el-popconfirm
+            </a-button>
+            <a-popconfirm
               :title="t('designer.clearConfirmTitle')"
               width="200px"
               :confirm-button-text="t('designer.clearConfirm')"
               :cancel-button-text="t('designer.clearCancel')"
               @confirm="clearDragRule">
               <template #reference>
-                <el-button type="danger" plain round size="small"
+                <a-button type="danger" plain round size="small"
                   ><i class="fc-icon icon-delete"></i>{{ t("designer.clear") }}
-                </el-button>
+                </a-button>
               </template>
-            </el-popconfirm>
-          </el-header>
-          <ElMain style="background: #f5f5f5; padding: 20px">
+            </a-popconfirm>
+          </a-layout-header>
+          <a-layout-content style="background: #f5f5f5; padding: 20px">
             <div class="_fc-m-drag">
               <DragForm
                 :rule="dragForm.rule"
                 :option="form.value"
                 v-model:api="dragForm.api"></DragForm>
             </div>
-          </ElMain>
-        </ElContainer>
-        <ElAside
+          </a-layout-content>
+        </a-layout>
+        <a-layout-sider
           class="_fc-r"
           width="320px"
           v-if="!config || config.showConfig !== false">
-          <ElContainer style="height: 100%">
-            <el-header height="40px" class="_fc-r-tabs">
+          <a-layout style="height: 100%">
+            <a-layout-header height="40px" class="_fc-r-tabs">
               <div
                 class="_fc-r-tab"
                 :class="{ active: activeTab === 'props' }"
@@ -230,8 +230,8 @@
                 @click="activeTab = 'form'">
                 {{ t("designer.config.form") }}
               </div>
-            </el-header>
-            <ElMain
+            </a-layout-header>
+            <a-layout-content
               v-show="activeTab === 'form'"
               v-if="!config || config.showFormConfig !== false">
               <DragForm
@@ -239,15 +239,15 @@
                 :option="form.option"
                 v-model="form.value.form"
                 v-model:api="form.api"></DragForm>
-            </ElMain>
-            <ElMain
+            </a-layout-content>
+            <a-layout-content
               v-show="activeTab === 'props'"
               style="padding: 0 20px"
               :key="activeRule ? activeRule._id : ''">
               <div>
-                <ElDivider v-if="showBaseRule">{{
+                <a-divider v-if="showBaseRule">{{
                   t("designer.config.rule")
-                }}</ElDivider>
+                }}</a-divider>
                 <DragForm
                   v-show="showBaseRule"
                   v-model:api="baseForm.api"
@@ -255,7 +255,7 @@
                   :option="baseForm.options"
                   :modelValue="baseForm.value"
                   @change="baseChange"></DragForm>
-                <ElDivider>{{ t("designer.config.props") }}</ElDivider>
+                <a-divider>{{ t("designer.config.props") }}</a-divider>
                 <DragForm
                   v-model:api="propsForm.api"
                   :rule="propsForm.rule"
@@ -263,9 +263,9 @@
                   :modelValue="propsForm.value"
                   @change="propChange"
                   @removeField="propRemoveField"></DragForm>
-                <ElDivider v-if="showBaseRule">{{
+                <a-divider v-if="showBaseRule">{{
                   t("designer.config.validate")
-                }}</ElDivider>
+                }}</a-divider>
                 <DragForm
                   v-show="showBaseRule"
                   v-model:api="validateForm.api"
@@ -274,18 +274,18 @@
                   :modelValue="validateForm.value"
                   @update:modelValue="validateChange"></DragForm>
               </div>
-            </ElMain>
-          </ElContainer>
-        </ElAside>
-        <ElDialog v-model="preview.state" width="800px" append-to-body>
+            </a-layout-content>
+          </a-layout>
+        </a-layout-sider>
+        <a-modal v-model:visible="preview.state" width="800px" append-to-body>
           <ViewForm
             :rule="preview.rule"
             :option="preview.option"
             v-if="preview.state"></ViewForm>
-        </ElDialog>
-      </ElContainer>
-    </ElMain>
-  </ElContainer>
+        </a-modal>
+      </a-layout>
+    </a-layout-content>
+  </a-layout>
 </template>
 
 <style></style>
