@@ -1,17 +1,17 @@
 <template>
     <div class="_fc_struct">
-        <ElButton @click="visible=true" style="width: 100%;">{{ title || t('struct.title') }}</ElButton>
-        <ElDialog :title="title || t('struct.title')" v-model="visible" :close-on-click-modal="false" append-to-body>
+        <a-button @click="visible=true" style="width: 100%;">{{ title || t('struct.title') }}</a-button>
+        <a-modal :title="title || t('struct.title')" v-model:visible="visible" :close-on-click-modal="false" append-to-body>
             <div ref="editor" v-if="visible"></div>
             <template #footer>
                 <span class="dialog-footer">
                     <span class="_fc_err" v-if="err">
                         {{ t('struct.error') }}{{ err !== true ? err : '' }}</span>
-                    <ElButton @click="visible = false" size="small">{{ t('struct.cancel') }}</ElButton>
-                    <ElButton type="primary" @click="onOk" size="small">{{ t('struct.submit') }}</ElButton>
+                    <a-button @click="visible = false" size="small">{{ t('struct.cancel') }}</a-button>
+                    <a-button type="primary" @click="onOk" size="small">{{ t('struct.submit') }}</a-button>
                 </span>
             </template>
-        </ElDialog>
+        </a-modal>
     </div>
 </template>
 
@@ -112,7 +112,7 @@ export default defineComponent({
     z-index: 2021 !important;
 }
 
-._fc_struct .el-dialog__body {
+._fc_struct .arco-modal-body {
     padding: 0px 20px;
 }
 
