@@ -58,6 +58,7 @@
         "access": "public"
     },
     "devDependencies": {
+        "@arco-design/web-vue": "^2.54.5",
         "@element-plus/icons-vue": "^0.2.6",
         "@sixian/css-url": "^1.0.3",
         "@types/chalk": "^2.2.0",
@@ -128,6 +129,7 @@
         ]
     },
     "dependencies": {
+        "@form-create/arco-design": "^3.1.28",
         "@form-create/component-wangeditor": "^3.1",
         "@form-create/element-ui": "^3.1.27",
         "@form-create/utils": "^3.1.23",

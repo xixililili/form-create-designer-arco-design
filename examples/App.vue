@@ -71,7 +71,7 @@ import 'codemirror/mode/htmlmixed/htmlmixed';
 import 'codemirror/mode/pug/pug';
 
 import is from '@form-create/utils/lib/type';
-import formCreate from '@form-create/element-ui';
+import formCreate from '@form-create/arco-design';
 import ZhCn from "../src/locale/zh-cn";
 import En from "../src/locale/en";
 
@@ -195,7 +195,7 @@ export default {
 </template>
 
 <script>
-import formCreate from "@form-create/element-ui";
+import formCreate from "@form-create/arco-design";
 
 export default {
   data () {

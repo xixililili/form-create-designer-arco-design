@@ -66,7 +66,9 @@ export default defineConfig({
             external: [
                 'vue',
                 'element-plus',
-                '@form-create/element-ui'
+                '@form-create/element-ui',
+                '@arco-design/web-vue',
+                '@form-create/arco-design',
             ],
 
         },
