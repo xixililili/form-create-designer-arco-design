@@ -107,7 +107,7 @@ export default defineComponent({
                     props: {
                         defaultValue: function parse(res){
                             return res
-},
+                        },
                     }
                 },
                 // {
@@ -156,7 +156,7 @@ export default defineComponent({
 });
 </script>
 <style>
-._fc_fetch .el-form-item__label {
+._fc_fetch .arco-form-item-label {
     float: left;
     display: inline-block;
     text-align: right;

@@ -1,7 +1,7 @@
 <template>
     <div class="_fc-required">
-        <ElSwitch v-model="required"></ElSwitch>
-        <ElInput v-model="requiredMsg" v-if="required" :placeholder="t('validate.requiredPlaceholder')"></ElInput>
+        <a-switch v-model="required"></a-switch>
+        <a-input v-model="requiredMsg" v-if="required" :placeholder="t('validate.requiredPlaceholder')"></a-input>
     </div>
 </template>
 
@@ -57,11 +57,11 @@ export default defineComponent({
     align-items: center;
 }
 
-._fc-required .el-input {
+._fc-required .arco-input {
     margin-left: 15px;
 }
 
-._fc-required .el-switch {
+._fc-required .arco-switch {
     height: 28px;
 }
 </style>
