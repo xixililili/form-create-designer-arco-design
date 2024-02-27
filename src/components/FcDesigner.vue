@@ -234,11 +234,13 @@
             <a-layout-content
               v-show="activeTab === 'form'"
               v-if="!config || config.showFormConfig !== false">
-              <DragForm
+              <a-card>
+                <DragForm
                 :rule="form.rule"
                 :option="form.option"
                 v-model="form.value.form"
                 v-model:api="form.api"></DragForm>
+              </a-card>
             </a-layout-content>
             <a-layout-content
               v-show="activeTab === 'props'"
@@ -395,6 +397,7 @@ export default defineComponent({
                     form: {
                         labelPosition: 'top',
                         size: 'small',
+                        layout: 'vertical',
                     },
                     submitBtn: false,
                 },
