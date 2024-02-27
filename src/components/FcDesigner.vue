@@ -150,7 +150,7 @@
   <a-layout class="_fc-designer" :style="'height:' + dragHeight">
     <a-layout-content>
       <a-layout style="height: 100%">
-        <a-layout-sider class="_fc-l" width="266px">
+        <a-layout-sider class="_fc-l" :width="266">
           <template v-for="(item, index) in menuList" :key="index">
             <div class="_fc-l-group">
               <h4 class="_fc-l-title">{{ item.title }}</h4>
@@ -210,7 +210,7 @@
         </a-layout>
         <a-layout-sider
           class="_fc-r"
-          width="320px"
+          :width="320"
           v-if="!config || config.showConfig !== false">
           <a-layout style="height: 100%">
             <a-layout-header height="40px" class="_fc-r-tabs">
