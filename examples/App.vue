@@ -274,6 +274,9 @@ body {
   cursor: pointer;
 }
 
+._fc-t-dialog.arco-modal-container {
+  z-index: 2500;
+}
 ._fc-t-dialog .CodeMirror {
   height: 450px;
 }

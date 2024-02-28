@@ -276,7 +276,7 @@
             </a-layout-content>
           </a-layout>
         </a-layout-sider>
-        <a-modal v-model:visible="preview.state" width="800px" append-to-body>
+        <a-modal v-model:visible="preview.state" width="800px" title="预览" :style="{zIndex:2500}" append-to-body>
           <ViewForm
             :rule="preview.rule"
             :option="preview.option"

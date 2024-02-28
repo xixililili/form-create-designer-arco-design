@@ -1,7 +1,7 @@
 <template>
     <div class="_fc_struct">
         <a-button @click="visible=true" style="width: 100%;">{{ title || t('struct.title') }}</a-button>
-        <a-modal :title="title || t('struct.title')" v-model:visible="visible" :close-on-click-modal="false" append-to-body>
+        <a-modal :title="title || t('struct.title')" v-model:visible="visible" :mask-closable="false" :style="{zIndex:2500}">
             <div ref="editor" v-if="visible"></div>
             <template #footer>
                 <span class="dialog-footer">
