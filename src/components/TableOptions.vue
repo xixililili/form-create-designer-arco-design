@@ -2,8 +2,8 @@
   <div class="_fc_table_opt">
     <a-table :data="modelValue" border size="small" style="width: 100%">
       <template v-for="(col, idx) in column" :key="col.label + idx">
-        <a-table-column :label="col.label">
-          <template #default="scope">
+        <a-table-column :title="col.label">
+          <template #cell="{ record: scope }">
             <a-input
               size="small"
               :modelValue="scope.row[col.key] || ''"
@@ -18,7 +18,7 @@
         align="center"
         fixed="right"
         :label="t('tableOptions.handle')">
-        <template #default="scope">
+        <template #cell="{ record: scope }">
           <i class="fc-icon icon-delete" @click="del(scope.$index)"></i>
         </template>
       </a-table-column>
