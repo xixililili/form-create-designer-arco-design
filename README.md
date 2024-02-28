@@ -4,24 +4,24 @@
     </a>
 </p>
 
-# form-create-designer v3
+# form-create-designer-arco-design v3
 
 **这个是 Vue3 版本**
 
-[![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/xaboy/form-create-designer)
-[![github](https://img.shields.io/badge/Author-xaboy-blue.svg)](https://github.com/xaboy)
+[![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/xixililili/form-create-designer-arco-design)
+[![github](https://img.shields.io/badge/Author-xaboy-blue.svg)](https://github.com/xixililili)
 
-**form-create-designer 是基于 [@form-create/element-ui](https://github.com/xaboy/form-create) vue3版本实现的表单设计器组件。可以通过拖拽的方式快速创建表单，提高开发者对表单的开发效率，节省开发者的时间。**
+**form-create-designer-arco-design 是基于 [@form-create/arco-design](https://github.com/xaboy/form-create) vue3版本实现的表单设计器组件。可以通过拖拽的方式快速创建表单，提高开发者对表单的开发效率，节省开发者的时间。**
 
-**[更新说明](https://github.com/xaboy/form-create-designer/blob/next/CHANGELOG.md) | [文档](http://designer.form-create.com/guide/) | [在线演示](http://form-create.com/v3/designer?fr=github) | [form-create 文档](http://form-create.com/v3/guide/)**
+**本项目基于 [form-create-designer](https://github.com/xaboy/form-create-designer) 这个项目开发 ，将UI框架更改为 [arco.design] (https://arco.design/vue/docs/start) ，做出的更改如下：**
+- element-plus -> arco.design
 
-> 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！本项目还在不断开发完善中,如有任何建议或问题[请在这里提出](https://github.com/xaboy/form-create-designer/issues/new)
+**[文档](http://designer.form-create.com/guide/) | [form-create 文档](http://form-create.com/v3/guide/)**
 
-> 本项目QQ讨论群[629709230](https://jq.qq.com/?_wv=1027&k=F1FlEFIV)
+> 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！本项目还在不断开发完善中,如有任何建议或问题[请在这里提出](https://github.com/xixililili/form-create-designer-arco-design/issues/new)
 
 
 
-![demo1](http://form-create.com/img/designer-review.png)
 
 ## 引入
 
@@ -152,13 +152,6 @@ export default {
     ```
 > **提示! 内置的三个组件分组`name`分别为: `main`,`aide`,`layout`**
 
-## 捐赠
-
-![donation.jpg](http://form-create.com/img/donation.jpg)
-
-## 联系
-
-##### email : xaboy2005@qq.com
 
 ## License
 
