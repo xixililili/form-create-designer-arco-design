@@ -124,6 +124,7 @@
 
 .drag-box {
   min-height: 60px;
+  height: 100%;
   width: 100%;
 }
 
@@ -141,7 +142,7 @@
 }
 
 ._fc-m-drag > form,
-._fc-m-drag > form > .a-row {
+._fc-m-drag > form > .arco-row {
   height: 100%;
 }
 </style>
@@ -179,17 +180,17 @@
         <a-layout class="_fc-m">
           <a-layout-header class="_fc-m-tools" height="45">
             <slot name="handle"></slot>
-            <a-button type="primary" plain round size="small" @click="previewFc"
+            <a-button type="primary" size="small" @click="previewFc"
               ><i class="fc-icon icon-preview"></i> {{ t("designer.preview") }}
             </a-button>
             <a-popconfirm
-              :title="t('designer.clearConfirmTitle')"
+              :content="t('designer.clearConfirmTitle')"
               width="200px"
-              :confirm-button-text="t('designer.clearConfirm')"
-              :cancel-button-text="t('designer.clearCancel')"
-              @confirm="clearDragRule">
-              <template #reference>
-                <a-button type="danger" plain round size="small"
+              :ok-text="t('designer.clearConfirm')"
+              :cancel-text="t('designer.clearCancel')"
+              @ok="clearDragRule">
+              <template #content>
+                <a-button type="primary" size="small"
                   ><i class="fc-icon icon-delete"></i>{{ t("designer.clear") }}
                 </a-button>
               </template>
@@ -418,6 +419,7 @@ export default defineComponent({
                     form: {
                         labelPosition: 'top',
                         size: 'small',
+                        layout: 'vertical',
                     },
                     submitBtn: false,
                     mounted: (fapi) => {
@@ -434,6 +436,7 @@ export default defineComponent({
                     form: {
                         labelPosition: 'top',
                         size: 'small',
+                        layout: 'vertical',
                     },
                     submitBtn: false,
                     mounted: (fapi) => {
@@ -450,6 +453,7 @@ export default defineComponent({
                     form: {
                         labelPosition: 'top',
                         size: 'small',
+                        layout: 'vertical',
                     },
                     submitBtn: false,
                     mounted: (fapi) => {
