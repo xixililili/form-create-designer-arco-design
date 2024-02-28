@@ -8,17 +8,20 @@ export default function field({t}) {
             field: 'field',
             value: '',
             title: t('form.field'),
-        }, {
+        },
+        {
             type: 'input',
             field: 'title',
             value: '',
             title: t('form.title'),
-        }, {
+        },
+        {
             type: 'input',
             field: 'info',
             value: '',
             title: t('form.info'),
-        }, {
+        },
+        {
             type: 'Struct',
             field: '_control',
             value: [],
@@ -31,54 +34,68 @@ export default function field({t}) {
                     return !val.some(({rule}) => {
                         return !Array.isArray(rule);
                     });
-                }
-            }
-        }, {
+                },
+            },
+        },
+        {
             type: 'col',
             props: {
-                span: 24
+                span: 24,
             },
             children: [
                 {
-                    type: 'a-button',
+                    type: 'a-space',
                     props: {
-                        type: 'primary',
-                        size: 'small',
+                        fill: true,
                     },
-                    inject: true,
-                    on: {
-                        click({$f}) {
-                            const rule = $f.activeRule;
-                            if (rule) {
-                                rule.__fc__.updateKey();
-                                rule.value = undefined;
-                                rule.__fc__.$api.sync(rule);
-                            }
+                    children: [
+                        {
+                            type: 'a-button',
+                            props: {
+                                type: 'primary',
+                                size: 'small',
+                            },
+                            inject: true,
+                            on: {
+                                click({$f}) {
+                                    const rule = $f.activeRule;
+                                    if (rule) {
+                                        rule.__fc__.updateKey();
+                                        rule.value = undefined;
+                                        rule.__fc__.$api.sync(rule);
+                                    }
+                                },
+                            },
+                            native: true,
+                            children: [
+                                {type: 'i', class: 'fc-icon icon-delete'},
+                                t('form.clear'),
+                            ],
                         },
-                    },
-                    native: true,
-                    children: [{type: 'i', class: 'fc-icon icon-delete'}, t('form.clear')]
-                }, {
-                    type: 'a-button',
-                    props: {
-                        type: 'success',
-                        size: 'small',
-                        icon: markRaw(IconRefresh),
-                    },
-                    inject: true,
-                    on: {
-                        click({$f}) {
-                            const rule = $f.activeRule;
-                            if (rule) {
-                                rule.__fc__.updateKey(true);
-                                rule.__fc__.$api.sync(rule);
-                            }
+                        {
+                            type: 'a-button',
+                            props: {
+                                type: 'primary',
+                                size: 'small',
+                                status: 'success',
+                                icon: markRaw(IconRefresh),
+                            },
+                            inject: true,
+                            on: {
+                                click({$f}) {
+                                    const rule = $f.activeRule;
+                                    if (rule) {
+                                        rule.__fc__.updateKey(true);
+                                        rule.__fc__.$api.sync(rule);
+                                    }
+                                },
+                            },
+                            native: true,
+                            children: [t('form.refresh')],
                         },
-                    },
-                    native: true,
-                    children: [t('form.refresh')]
+                    ],
                 },
-            ]
-        }
+            ],
+        },
     ];
 }

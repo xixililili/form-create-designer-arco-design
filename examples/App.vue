@@ -182,34 +182,34 @@ export default {
       const rule = this.$refs.designer.getRule();
       const opt = this.$refs.designer.getOption();
       return `<template>
-  <form-create
-    v-model="fapi"
-    :rule="rule"
-    :option="option"
-    @submit="onSubmit"
-  ></form-create>
-</template>
+                <form-create
+                  v-model="fapi"
+                  :rule="rule"
+                  :option="option"
+                  @submit="onSubmit"
+                ></form-create>
+              </template>
 
-<script>
-import formCreate from "@form-create/arco-design";
+              <script>
+              import formCreate from "@form-create/arco-design";
 
-export default {
-  data () {
-    return {
-        fapi: null,
-        rule: formCreate.parseJson('${formCreate
-          .toJson(rule)
-          .replaceAll("\\", "\\\\")}'),
-        option: formCreate.parseJson('${JSON.stringify(opt)}')
-    }
-  },
-  methods: {
-    onSubmit (formData) {
-      //todo 提交表单
-    }
-  }
-}
-<\/script>`;
+              export default {
+                data () {
+                  return {
+                      fapi: null,
+                      rule: formCreate.parseJson('${formCreate
+                        .toJson(rule)
+                        .replaceAll("\\", "\\\\")}'),
+                      option: formCreate.parseJson('${JSON.stringify(opt)}')
+                  }
+                },
+                methods: {
+                  onSubmit (formData) {
+                    //todo 提交表单
+                  }
+                }
+              }
+              <\/script>`;
     },
   },
   beforeCreate() {
@@ -275,7 +275,7 @@ body {
 }
 
 ._fc-t-dialog.arco-modal-container {
-  z-index: 2500;
+  z-index: 2500 !important;
 }
 ._fc-t-dialog .CodeMirror {
   height: 450px;

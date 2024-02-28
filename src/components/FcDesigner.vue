@@ -180,21 +180,24 @@
         <a-layout class="_fc-m">
           <a-layout-header class="_fc-m-tools" height="45">
             <slot name="handle"></slot>
-            <a-button type="primary" size="small" @click="previewFc"
-              ><i class="fc-icon icon-preview"></i> {{ t("designer.preview") }}
-            </a-button>
-            <a-popconfirm
-              :content="t('designer.clearConfirmTitle')"
-              width="200px"
-              :ok-text="t('designer.clearConfirm')"
-              :cancel-text="t('designer.clearCancel')"
-              @ok="clearDragRule">
-              <template #content>
-                <a-button type="primary" size="small"
-                  ><i class="fc-icon icon-delete"></i>{{ t("designer.clear") }}
+            <a-space>
+                <a-button type="primary" size="small" @click="previewFc">
+                    <i class="fc-icon icon-preview"></i> {{ t("designer.preview") }}
                 </a-button>
-              </template>
-            </a-popconfirm>
+
+                <a-popconfirm
+                :content="t('designer.clearConfirmTitle')"
+                width="200px"
+                :style="{ zIndex: 2500 }"
+                :ok-text="t('designer.clearConfirm')"
+                :cancel-text="t('designer.clearCancel')"
+                @ok="clearDragRule">
+                    <a-button type="primary" size="small">
+                        <i class="fc-icon icon-delete"></i>{{ t("designer.clear") }}
+                    </a-button>
+                </a-popconfirm>
+            </a-space>
+            
           </a-layout-header>
           <a-layout-content style="background: #f5f5f5; padding: 20px">
             <div class="_fc-m-drag">
@@ -266,7 +269,7 @@
                   t("designer.config.validate")
                 }}</a-divider>
                 <DragForm
-                  v-show="showBaseRule"
+                  v-if="showBaseRule"
                   v-model:api="validateForm.api"
                   :rule="validateForm.rule"
                   :option="validateForm.options"
@@ -276,7 +279,12 @@
             </a-layout-content>
           </a-layout>
         </a-layout-sider>
-        <a-modal v-model:visible="preview.state" width="800px" title="预览" :style="{zIndex:2500}" append-to-body>
+        <a-modal
+          v-model:visible="preview.state"
+          width="800px"
+          title="预览"
+          :style="{ zIndex: 2500 }"
+          append-to-body>
           <ViewForm
             :rule="preview.rule"
             :option="preview.option"

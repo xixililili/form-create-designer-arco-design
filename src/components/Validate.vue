@@ -31,7 +31,8 @@ export default defineComponent({
                 form: {
                     labelPosition: 'top',
                     size: 'small',
-                    labelWidth: '90px'
+                    labelWidth: '90px',
+                    layout: 'vertical',
                 },
                 submitBtn: false,
                 appendValue: true,
