@@ -151,39 +151,35 @@
     <a-layout-content>
       <a-layout style="height: 100%">
         <a-layout-sider class="_fc-l" :width="266">
-          <template v-for="(item, index) in menuList" :key="index">
-            <div class="_fc-l-group">
-              <h4 class="_fc-l-title">{{ item.title }}</h4>
-              <draggable
-                :group="{ name: 'default', pull: 'clone', put: false }"
-                :sort="false"
-                itemKey="name"
-                :list="item.list">
-                <template #item="{ element }">
-                  <div class="_fc-l-item">
-                    <div class="_fc-l-icon">
-                      <i
-                        class="fc-icon"
-                        :class="element.icon || 'icon-input'"></i>
-                    </div>
-                    <span class="_fc-l-name">{{
-                      t("components." + element.name + ".name") || element.label
-                    }}</span>
+          <div
+            class="_fc-l-group"
+            v-for="(item, index) in menuList"
+            :key="index">
+            <h4 class="_fc-l-title">{{ item.title }}</h4>
+            <draggable
+              :group="{ name: 'default', pull: 'clone', put: false }"
+              :sort="false"
+              itemKey="name"
+              :list="item.list">
+              <template #item="{ element }">
+                <div class="_fc-l-item">
+                  <div class="_fc-l-icon">
+                    <i
+                      class="fc-icon"
+                      :class="element.icon || 'icon-input'"></i>
                   </div>
-                </template>
-              </draggable>
-            </div>
-          </template>
+                  <span class="_fc-l-name">{{
+                    t("components." + element.name + ".name") || element.label
+                  }}</span>
+                </div>
+              </template>
+            </draggable>
+          </div>
         </a-layout-sider>
         <a-layout class="_fc-m">
           <a-layout-header class="_fc-m-tools" height="45">
             <slot name="handle"></slot>
-            <a-button
-              type="primary"
-              plain
-              round
-              size="small"
-              @click="previewFc"
+            <a-button type="primary" plain round size="small" @click="previewFc"
               ><i class="fc-icon icon-preview"></i> {{ t("designer.preview") }}
             </a-button>
             <a-popconfirm
@@ -236,10 +232,10 @@
               v-if="!config || config.showFormConfig !== false">
               <a-card>
                 <DragForm
-                :rule="form.rule"
-                :option="form.option"
-                v-model="form.value.form"
-                v-model:api="form.api"></DragForm>
+                  :rule="form.rule"
+                  :option="form.option"
+                  v-model="form.value.form"
+                  v-model:api="form.api"></DragForm>
               </a-card>
             </a-layout-content>
             <a-layout-content
