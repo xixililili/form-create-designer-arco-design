@@ -40,7 +40,7 @@ export default function field({t}) {
             },
             children: [
                 {
-                    type: 'el-button',
+                    type: 'a-button',
                     props: {
                         type: 'primary',
                         size: 'small',
@@ -59,7 +59,7 @@ export default function field({t}) {
                     native: true,
                     children: [{type: 'i', class: 'fc-icon icon-delete'}, t('form.clear')]
                 }, {
-                    type: 'el-button',
+                    type: 'a-button',
                     props: {
                         type: 'success',
                         size: 'small',

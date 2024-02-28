@@ -1,7 +1,7 @@
 import {localeProps} from '../../utils';
 
 const label = '分割线';
-const name = 'el-divider';
+const name = 'a-divider';
 
 export default {
     icon: 'icon-divider',

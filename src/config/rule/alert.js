@@ -1,7 +1,7 @@
 import {localeProps} from '../../utils';
 
 const label = '提示';
-const name = 'el-alert';
+const name = 'a-alert';
 
 export default {
     icon: 'icon-alert',

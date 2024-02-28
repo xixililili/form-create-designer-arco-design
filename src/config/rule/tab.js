@@ -11,7 +11,7 @@ export default {
     mask: false,
     rule() {
         return {
-            type: 'el-tabs',
+            type: 'a-tabs',
             style: 'width:100%;',
             children: []
         };

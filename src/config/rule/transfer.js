@@ -2,7 +2,7 @@ import uniqueId from '@form-create/utils/lib/unique';
 import {localeProps} from '../../utils';
 
 const label = '穿梭框';
-const name = 'el-transfer';
+const name = 'a-transfer';
 
 const generateData = () => {
     const data = [];

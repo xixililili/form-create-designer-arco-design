@@ -12,7 +12,7 @@ export default {
     mask: false,
     rule({t}) {
         return {
-            type: 'el-tab-pane',
+            type: 'a-tab-pane',
             props: {label: t('components.el-transfer.name')},
             children: []
         };
