@@ -623,7 +623,7 @@ export default defineComponent({
                     props: {
                         rule: {
                             props: {
-                                tag: 'el-col',
+                                tag: 'a-col',
                                 group: group === true ? 'default' : group,
                                 ghostClass: 'ghost',
                                 animation: 150,
