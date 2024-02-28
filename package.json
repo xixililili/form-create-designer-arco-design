@@ -1,8 +1,7 @@
 {
-    "name": "@form-create/designer-arco",
-    "version": "0.0.1",
+    "name": "form-create-designer-arco-design",
+    "version": "1.0.1",
     "description": "好用的vue(arco-design)可视化表单设计器组件",
-    "private": true,
     "unpkg": "./dist/index.umd.js",
     "jsdelivr": "./dist/index.umd.js",
     "typings": "./types/index.d.ts",
@@ -24,7 +23,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/xaboy/form-create-designer.git"
+        "url": "git+https://github.com/xixililili/form-create-designer-arco-design.git"
     },
     "keywords": [
         "表单设计器",
@@ -49,11 +48,10 @@
         "dist",
         "locale"
     ],
-    "author": "xixili",
+    "author": "xixililili",
     "license": "MIT",
     "homepage": "http://designer.form-create.com",
     "publishConfig": {
-        "registry": "http://39.105.213.77:4873/",
         "access": "public"
     },
     "devDependencies": {
