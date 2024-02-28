@@ -1,7 +1,8 @@
 {
-    "name": "@form-create/designer",
-    "version": "3.1.5",
-    "description": "好用的vue可视化表单设计器组件",
+    "name": "@form-create/designer-arco",
+    "version": "0.0.1",
+    "description": "好用的vue(arco-design)可视化表单设计器组件",
+    "private": true,
     "unpkg": "./dist/index.umd.js",
     "jsdelivr": "./dist/index.umd.js",
     "typings": "./types/index.d.ts",
@@ -48,13 +49,11 @@
         "dist",
         "locale"
     ],
-    "author": "xaboy",
+    "author": "xixili",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/xaboy/form-create-designer/issues"
-    },
     "homepage": "http://designer.form-create.com",
     "publishConfig": {
+        "registry": "http://39.105.213.77:4873/",
         "access": "public"
     },
     "devDependencies": {
@@ -81,7 +80,6 @@
         "cz-conventional-changelog": "^3.2.0",
         "cz-customizable": "^6.3.0",
         "dayjs": "^1.10.7",
-        "element-plus": "^2.0.1",
         "eslint": "^7.7.0",
         "eslint-plugin-vue": "^6.2.2",
         "esno": "^0.9.1",
@@ -131,7 +129,6 @@
     "dependencies": {
         "@form-create/arco-design": "^3.1.28",
         "@form-create/component-wangeditor": "^3.1",
-        "@form-create/element-ui": "^3.1.27",
         "@form-create/utils": "^3.1.23",
         "vuedraggable": "4.1.0"
     }
