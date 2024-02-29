@@ -9,7 +9,7 @@
 **这个是 Vue3 版本**
 
 [![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/xixililili/form-create-designer-arco-design)
-[![github](https://img.shields.io/badge/Author-xaboy-blue.svg)](https://github.com/xixililili)
+[![github](https://img.shields.io/badge/Author-xixililili-blue.svg)](https://github.com/xixililili)
 
 **form-create-designer-arco-design 是基于 [@form-create/arco-design](https://github.com/xaboy/form-create) vue3版本实现的表单设计器组件。可以通过拖拽的方式快速创建表单，提高开发者对表单的开发效率，节省开发者的时间。**
 
