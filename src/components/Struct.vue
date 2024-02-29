@@ -1,7 +1,7 @@
 <template>
     <div class="_fc_struct">
         <a-button @click="visible=true" style="width: 100%;">{{ title || t('struct.title') }}</a-button>
-        <a-modal :title="title || t('struct.title')" v-model:visible="visible" :mask-closable="false" :style="{zIndex:2500}">
+        <a-modal :title="title || t('struct.title')" v-model:visible="visible" :mask-closable="false" :style="{zIndex:888}">
             <div ref="editor" v-if="visible"></div>
             <template #footer>
                 <span class="dialog-footer">
@@ -109,7 +109,7 @@ export default defineComponent({
 }
 
 .CodeMirror-lint-tooltip {
-    z-index: 2021 !important;
+    z-index: 888 !important;
 }
 
 ._fc_struct .arco-modal-body {

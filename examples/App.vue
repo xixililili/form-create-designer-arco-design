@@ -275,7 +275,7 @@ body {
 }
 
 ._fc-t-dialog.arco-modal-container {
-  z-index: 2500 !important;
+  z-index: 888 !important;
 }
 ._fc-t-dialog .CodeMirror {
   height: 450px;
@@ -287,7 +287,7 @@ body {
 }
 
 .CodeMirror-lint-tooltip {
-  z-index: 2021 !important;
+  z-index: 888 !important;
 }
 
 ._fc-t-dialog .el-dialog__body {

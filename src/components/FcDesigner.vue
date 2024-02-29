@@ -17,7 +17,7 @@
 }
 
 ._fc-m .form-create ._fc-l-item {
-  background: #2e73ff;
+  background: rgb(var(--primary-6));
   width: 100%;
   height: 10px;
   overflow: hidden;
@@ -68,7 +68,7 @@
 }
 
 ._fc-l-item:hover {
-  background: #2e73ff;
+  background: rgb(var(--primary-6));
   color: #fff;
 }
 
@@ -118,8 +118,8 @@
 }
 
 ._fc-r ._fc-r-tab.active {
-  color: #409eff;
-  border-bottom: 2px solid #409eff;
+  color: rgb(var(--primary-6));
+  border-bottom: 2px solid rgb(var(--primary-6));
 }
 
 .drag-box {
@@ -188,7 +188,7 @@
                 <a-popconfirm
                 :content="t('designer.clearConfirmTitle')"
                 width="200px"
-                :style="{ zIndex: 2500 }"
+                :style="{ zIndex: 888 }"
                 :ok-text="t('designer.clearConfirm')"
                 :cancel-text="t('designer.clearCancel')"
                 @ok="clearDragRule">
@@ -283,7 +283,7 @@
           v-model:visible="preview.state"
           width="800px"
           title="预览"
-          :style="{ zIndex: 2500 }"
+          :style="{ zIndex: 888 }"
           append-to-body>
           <ViewForm
             :rule="preview.rule"

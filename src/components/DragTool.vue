@@ -60,7 +60,7 @@ export default defineComponent({
     min-height: 20px;
     box-sizing: border-box;
     padding: 2px;
-    outline: 1px dashed #2E73FF;
+    outline: 1px dashed rgb(var(--primary-6));
     overflow: hidden;
     word-wrap: break-word;
     word-break: break-all;
@@ -75,7 +75,7 @@ export default defineComponent({
 }
 
 .drag-tool.active {
-    outline: 2px solid #2E73FF;
+    outline: 2px solid rgb(var(--primary-6));
 }
 
 .drag-tool.active > div > .drag-btn {
@@ -90,14 +90,14 @@ export default defineComponent({
     position: absolute;
     right: 2px;
     bottom: 2px;
-    z-index: 1904;
+    z-index: 886;
 }
 
 .drag-l {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1904
+    z-index: 886
 
 }
 
@@ -105,7 +105,7 @@ export default defineComponent({
     height: 18px;
     width: 18px;
     color: #fff;
-    background-color: #2E73FF;
+    background-color: rgb(var(--primary-6));
     text-align: center;
     line-height: 20px;
     padding-bottom: 1px;
@@ -119,7 +119,7 @@ export default defineComponent({
 }
 
 .drag-btn-danger {
-    background-color: #FF2E2E;
+    background-color: rgb(var(--danger-6));
 }
 
 .drag-btn i {
@@ -127,7 +127,7 @@ export default defineComponent({
 }
 
 .drag-mask {
-    z-index: 1900;
+    z-index: 885;
     position: absolute;
     top: 0;
     left: 0;
