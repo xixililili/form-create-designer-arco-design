@@ -56,7 +56,7 @@ app.use(FcDesigner)
 </template>
 
 <script>
-import En from "@form-create/designer/locale/en.js";
+import En from "@form-create/arco-design/locale/en.js";
 export default {
   data(){
     return {
