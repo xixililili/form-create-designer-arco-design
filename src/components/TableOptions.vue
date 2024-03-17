@@ -1,27 +1,31 @@
 <template>
   <div class="_fc_table_opt">
-    <a-table :data="modelValue" border size="small" style="width: 100%">
-      <template v-for="(col, idx) in column" :key="col.label + idx">
-        <a-table-column :title="col.label">
-          <template #cell="{ record: scope }">
+    <a-table :data="modelValue" size="small" style="width: 100%">
+      <template #columns>
+        <a-table-column
+          :title="col.label"
+          :data-index="col.key"
+          v-for="(col, idx) in column"
+          :key="col.label + idx">
+          <template #cell="{ record }">
             <a-input
               size="small"
-              :modelValue="scope.row[col.key] || ''"
-              @Update:modelValue="
-                (n) => ((scope.row[col.key] = n), onInput(scope.row))
-              "></a-input>
+              v-model="record[col.key]"
+              @update:model-value="
+                (n) => ((record[col.key] = n), onInput(record))
+              " />
+          </template>
+        </a-table-column>
+        <a-table-column
+          :width="50"
+          align="center"
+          fixed="right"
+          :title="t('tableOptions.handle')">
+          <template #cell="{ record: scope }">
+            <i class="fc-icon icon-delete" @click="del(scope.$index)"></i>
           </template>
         </a-table-column>
       </template>
-      <a-table-column
-        min-width="50"
-        align="center"
-        fixed="right"
-        :label="t('tableOptions.handle')">
-        <template #cell="{ record: scope }">
-          <i class="fc-icon icon-delete" @click="del(scope.$index)"></i>
-        </template>
-      </a-table-column>
     </a-table>
     <a-button link type="primary" @click="add">
       <i class="fc-icon icon-add"></i> {{ t("tableOptions.add") }}
