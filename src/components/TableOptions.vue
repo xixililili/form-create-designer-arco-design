@@ -1,5 +1,5 @@
 <template>
-  <div class="_fc_table_opt">
+  <a-card class="_fc_table_opt">
     <a-table :data="modelValue" size="small" style="width: 100%">
       <template #columns>
         <a-table-column
@@ -27,10 +27,12 @@
         </a-table-column>
       </template>
     </a-table>
-    <a-button link type="primary" @click="add">
-      <i class="fc-icon icon-add"></i> {{ t("tableOptions.add") }}
-    </a-button>
-  </div>
+    <a-space fill>
+      <a-button link type="primary" @click="add">
+        <i class="fc-icon icon-add"></i> {{ t("tableOptions.add") }}
+      </a-button>
+    </a-space>
+  </a-card>
 </template>
 
 <script>
