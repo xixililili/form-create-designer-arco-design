@@ -62,6 +62,6 @@ export default defineComponent({
 }
 
 ._fc-required .arco-switch {
-    height: 28px;
+    /* height: 28px; */
 }
 </style>
