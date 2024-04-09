@@ -382,7 +382,6 @@ export default defineComponent({
             children: ref([]),
             menuList: menu.value || createMenu({t}),
             showBaseRule: false,
-            showValidateRule: computed(()=> data.validateForm && data.validateForm.rule.length),
             visible: {
                 preview: false,
             },
@@ -472,6 +471,8 @@ export default defineComponent({
                 },
             },
         });
+
+        const showValidateRule= computed(()=> data.validateForm && data.validateForm.rule.length)
 
         watch(
             () => data.preview.state,
@@ -1230,6 +1231,7 @@ export default defineComponent({
             ...methods,
             dragHeight,
             t,
+            showValidateRule
         };
     },
     created() {
