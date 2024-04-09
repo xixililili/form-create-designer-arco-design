@@ -265,7 +265,7 @@
                   :modelValue="propsForm.value"
                   @change="propChange"
                   @removeField="propRemoveField"></DragForm>
-                <a-divider v-if="validateForm.rule.length">{{
+                <a-divider v-if="showValidateRule">{{
                   t("designer.config.validate")
                 }}</a-divider>
                 <DragForm
@@ -382,6 +382,7 @@ export default defineComponent({
             children: ref([]),
             menuList: menu.value || createMenu({t}),
             showBaseRule: false,
+            showValidateRule: computed(()=> data.validateForm && data.validateForm.rule.length),
             visible: {
                 preview: false,
             },
