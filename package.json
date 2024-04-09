@@ -1,6 +1,6 @@
 {
     "name": "form-create-designer-arco-design",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "好用的vue(arco-design)可视化表单设计器组件",
     "unpkg": "./dist/index.umd.js",
     "jsdelivr": "./dist/index.umd.js",

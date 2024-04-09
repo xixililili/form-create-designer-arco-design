@@ -265,7 +265,7 @@
                   :modelValue="propsForm.value"
                   @change="propChange"
                   @removeField="propRemoveField"></DragForm>
-                <a-divider v-if="showBaseRule">{{
+                <a-divider v-if="validateForm.rule.length">{{
                   t("designer.config.validate")
                 }}</a-divider>
                 <DragForm
