@@ -472,7 +472,9 @@ export default defineComponent({
             },
         });
 
-        const showValidateRule= computed(()=> data.validateForm && data.validateForm.rule.length)
+        const showValidateRule= computed(() => {
+            return !!data.validateForm?.rule.length
+        })
 
         watch(
             () => data.preview.state,
