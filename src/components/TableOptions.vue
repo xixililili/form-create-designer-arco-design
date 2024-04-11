@@ -21,8 +21,8 @@
           align="center"
           fixed="right"
           :title="t('tableOptions.handle')">
-          <template #cell="{ record: scope }">
-            <i class="fc-icon icon-delete" @click="del(scope.$index)"></i>
+          <template #cell="{ rowIndex }">
+            <i class="fc-icon icon-delete" @click="del(rowIndex)"></i>
           </template>
         </a-table-column>
       </template>
@@ -71,10 +71,11 @@ export default defineComponent({
         add() {
             this.modelValue.push(
                 this.column.reduce((initial, v) => {
-                    initial[v.key] = '';
+                    initial[v.key] = `选项${this.modelValue.length+1}`;
                     return initial;
                 }, {})
             );
+            this.input();
         },
         del(idx) {
             this.modelValue.splice(idx, 1);
