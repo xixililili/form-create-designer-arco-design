@@ -181,23 +181,22 @@
           <a-layout-header class="_fc-m-tools" height="45">
             <slot name="handle"></slot>
             <a-space>
-                <a-button type="primary" size="small" @click="previewFc">
-                    <i class="fc-icon icon-preview"></i> {{ t("designer.preview") }}
-                </a-button>
+              <a-button type="primary" size="small" @click="previewFc">
+                <i class="fc-icon icon-preview"></i> {{ t("designer.preview") }}
+              </a-button>
 
-                <a-popconfirm
+              <a-popconfirm
                 :content="t('designer.clearConfirmTitle')"
                 width="200px"
                 :style="{ zIndex: 888 }"
                 :ok-text="t('designer.clearConfirm')"
                 :cancel-text="t('designer.clearCancel')"
                 @ok="clearDragRule">
-                    <a-button type="primary" size="small">
-                        <i class="fc-icon icon-delete"></i>{{ t("designer.clear") }}
-                    </a-button>
-                </a-popconfirm>
+                <a-button type="primary" size="small">
+                  <i class="fc-icon icon-delete"></i>{{ t("designer.clear") }}
+                </a-button>
+              </a-popconfirm>
             </a-space>
-            
           </a-layout-header>
           <a-layout-content style="background: #f5f5f5; padding: 20px">
             <div class="_fc-m-drag">
@@ -472,9 +471,9 @@ export default defineComponent({
             },
         });
 
-        const showValidateRule= computed(() => {
-            return !!data.validateForm?.rule.length
-        })
+        const showValidateRule = computed(() => {
+            return !!data.validateForm?.rule.length;
+        });
 
         watch(
             () => data.preview.state,
@@ -719,19 +718,18 @@ export default defineComponent({
                 data.cacheProps = {};
                 const activeRule = data.activeRule;
                 if (activeRule) {
-                    const propsVal =
-            data.propsForm.api.formData && data.propsForm.api.formData();
+                    const propsVal =data.propsForm.api.formData && data.propsForm.api.formData();
                     data.propsForm.rule = data.cacheProps[activeRule._id] =
-            tidyRuleConfig(
-                activeRule.config.config.props,
-                componentRule.value &&
-                componentRule.value[activeRule.config.config.name],
-                activeRule,
-                {
-                    t,
-                    api: data.dragForm.api,
-                }
-            );
+                        tidyRuleConfig(
+                            activeRule.config.config.props,
+                            componentRule.value &&
+                            componentRule.value[activeRule.config.config.name],
+                            activeRule,
+                            {
+                                t,
+                                api: data.dragForm.api,
+                            }
+                        );
                     nextTick(() => {
                         propsVal && data.propsForm.api.setValue(propsVal);
                     });
@@ -1233,7 +1231,7 @@ export default defineComponent({
             ...methods,
             dragHeight,
             t,
-            showValidateRule
+            showValidateRule,
         };
     },
     created() {
