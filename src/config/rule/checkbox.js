@@ -24,7 +24,7 @@ export default {
             },
             $required: false,
             props: {},
-            options: [1, 2].map((value) => {
+            options: ['1', '2'].map((value) => {
                 return {
                     label: opt + value,
                     value,
