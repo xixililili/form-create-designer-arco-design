@@ -17,6 +17,10 @@ const En = {
         resetBtn: 'Whether to display the form reset button',
         submit: 'Submit',
         reset: 'Reset',
+        layout: 'How the form is laid out',
+        labelAlign: 'The alignment direction of the label',
+        autoLabelWidth: 'Whether to enable automatic label width takes effect only when layout="horizontal".',
+        scrollToFirstError: 'Scroll to first error field after validation failure',
     },
     validate: {
         type: 'Value type',

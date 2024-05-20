@@ -1,5 +1,5 @@
-import {Rule} from "@form-create/element-ui";
-import FormCreate from "@form-create/element-ui";
+import {Rule} from "@form-create/arco-design";
+import FormCreate from "@form-create/arco-design";
 import {Component, Plugin, Ref} from "@vue/runtime-core";
 
 export interface MenuItem {

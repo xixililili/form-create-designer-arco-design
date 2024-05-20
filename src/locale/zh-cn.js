@@ -17,6 +17,10 @@ const ZhCn = {
         resetBtn: '是否显示表单重置按钮',
         submit: '提交',
         reset: '重置',
+        layout: '表单的布局方式',
+        labelAlign: '标签的对齐方向',
+        autoLabelWidth: '是否开启自动标签宽度，仅在 layout="horizontal" 下生效。',
+        scrollToFirstError: '验证失败后滚动到第一个错误字段',
     },
     validate: {
         type: '字段类型',
