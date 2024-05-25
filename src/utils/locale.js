@@ -1,5 +1,5 @@
-import {useLocale} from "./index";
-import {ref} from "vue";
+import {useLocale} from './index';
+import {ref} from 'vue';
 
 let _t = null;
 let _locale = ref(null);
