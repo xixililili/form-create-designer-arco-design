@@ -13,7 +13,7 @@
 
 **form-create-designer-arco-design 是基于 [@form-create/arco-design](https://github.com/xaboy/form-create) vue3版本实现的表单设计器组件。可以通过拖拽的方式快速创建表单，提高开发者对表单的开发效率，节省开发者的时间。**
 
-**本项目基于 [form-create-designer](https://github.com/xaboy/form-create-designer) 这个项目开发 ，将UI框架更改为 [arco.design] (https://arco.design/vue/docs/start) ，做出的更改如下：**
+**本项目基于 [form-create-designer 3.1.5](https://github.com/xaboy/form-create-designer) 这个版本开发 ，将UI框架更改为 [arco.design] (https://arco.design/vue/docs/start) ，做出的更改如下：**
 - element-plus -> arco.design
 
 **[文档](http://designer.form-create.com/guide/) | [form-create 文档](http://form-create.com/v3/guide/)**
