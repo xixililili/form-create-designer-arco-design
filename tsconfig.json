@@ -1,11 +1,11 @@
-
 {
 	"compilerOptions": {
 		"target": "ESNext",
 		"sourceMap": true,
 		"allowUnreachableCode": true,
-    "allowSyntheticDefaultImports": true,
+		"allowSyntheticDefaultImports": true,
 		"allowJs": true,
+		"outDir": "./dist", 
 		"experimentalDecorators": true,
 		"moduleResolution": "node",
 		"noImplicitThis": true,
@@ -16,6 +16,6 @@
 	"include": [
 		"*.vue",
 		"*",
-    "types/typing.d.ts"
+		"types/typing.d.ts"
 	]
 }
