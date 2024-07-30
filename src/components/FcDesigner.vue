@@ -303,6 +303,7 @@ import validate from '../config/base/validate';
 import {deepCopy} from '@form-create/utils/lib/deepextend';
 import is, {hasProperty} from '@form-create/utils/lib/type';
 import {lower} from '@form-create/utils/lib/tocase';
+import uniqueId from '@form-create/utils/lib/unique';
 import ruleList from '../config/rule';
 import draggable from 'vuedraggable/src/vuedraggable';
 import createMenu from '../config/menu';
@@ -1210,10 +1211,16 @@ export default defineComponent({
                             copy: ({self}) => {
                                 vm.emit('copy', self.children[0]);
                                 const top = methods.getParent(self);
+                                const temp =designerForm.copyRule(top.parent)
+                                temp.children.forEach(element => {
+                                    if(element.field){
+                                        element.field = uniqueId()
+                                    }
+                                });
                                 top.root.children.splice(
                                     top.root.children.indexOf(top.parent) + 1,
                                     0,
-                                    designerForm.copyRule(top.parent)
+                                    temp
                                 );
                             },
                             active: ({self}) => {
